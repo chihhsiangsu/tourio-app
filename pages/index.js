@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Card from "../components/Card";
 import useSWR from "swr";
 import { StyledLink } from "../components/StyledLink";
+import { isAbsoluteUrl } from "next/dist/shared/lib/utils";
 
 const ListContainer = styled.ul`
   list-style: none;
