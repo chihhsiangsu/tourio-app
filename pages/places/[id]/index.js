@@ -41,7 +41,13 @@ export default function DetailsPage() {
   if (error) return <h2>Failed to load place!</h2>;
 
   async function deletePlace() {
-    console.log("Deleting place ...");
+    const response = await fetch(`/api/places/${id}`, {
+      method: "DELETE",
+    });
+    if (response.ok) {
+      alert(`${place.name} has been deleted!`);
+      router.push("/");
+    }
   }
 
   return (
